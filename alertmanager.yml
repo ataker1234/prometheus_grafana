@@ -1,0 +1,16 @@
+route:
+  receiver: default                # default receiver if nothing else matches
+  group_by: ['alertname','instance'] # alerts with same labels get grouped
+  group_wait: 30s                  # wait before sending first notification
+  group_interval: 5m               # minimum wait between notifications for a group
+  repeat_interval: 3h              # resend if alert still firing after this time
+
+receivers:
+  - name: default                  # must match the route.receiver above
+    telegram_configs:              # example: send to Telegram
+      - bot_token: "8339825179:AAFZGWthlP0556k77gU6k2HIqYNcEF4IJJk"
+        chat_id: 8377066808
+        message: |-
+          {{ range .Alerts }}
+          Alert: {{ .Annotations.summary }}
+          {{ end }}

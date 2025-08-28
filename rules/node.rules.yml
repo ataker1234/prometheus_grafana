@@ -1,0 +1,10 @@
+groups:
+  - name: test
+    rules:
+      - alert: AlwaysFiring_Test
+        expr: vector(1)
+        for: 10s
+        labels:
+          severity: critical
+        annotations:
+          summary: "Test alert from Prometheus"
