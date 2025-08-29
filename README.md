@@ -1,4 +1,4 @@
-# My Monitoring Stack of Prometheus and Grafanay
+# My Monitoring Stack of Prometheus and Grafana
 
 This repository contains the configuration files of my Prometheus, Grafana and AlertManager config. 
 
